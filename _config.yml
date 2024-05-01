@@ -202,7 +202,7 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
-  publications:
+  ppppublications:
     output: true
     permalink: /:collection/:path/
   portfolio:
