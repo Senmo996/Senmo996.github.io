@@ -9,8 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-
-
 教育经历
 ======
 * 学士，长安大学, 2020-2024
@@ -47,11 +45,12 @@ redirect_from:
 论文
 ======
 现在还没有，等有了再发出来😭😭😭
+
   <!-- <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul> -->
+  {% endfor %}</ul> 
   
-<!-- Talks
+Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
