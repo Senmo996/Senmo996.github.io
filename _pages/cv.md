@@ -12,9 +12,9 @@ redirect_from:
 教育经历
 ======
 * 学士，长安大学, 2020-2024
-* 硕士，中国科学院大学，2024-2027（预计）
+* 硕士，中国科学院大学，2024-至今
 
-工作经历
+<!-- 工作经历
 ======
 * Spring 2024: Academic Pages Collaborator
   * Github University
@@ -29,10 +29,14 @@ redirect_from:
 * Summer 2015: Research Assistant
   * Github University
   * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Supervisor: Professor Git -->
   
 技能
 ======
+* 计算机方面
+  * Git
+  * JavaScript
+  * Docker
 * 人工智能方面
   * Python
   * Pytorch
