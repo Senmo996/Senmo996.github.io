@@ -10,6 +10,20 @@ redirect_from:
 
 首先感谢这个博客模板的[提供者](https://github.com/academicpages/academicpages.github.io)。这个网站主要是站主用于记录研究时的笔记，遇到的一些离谱的问题以及分享一些个人感悟。出于一时的兴起，并且听信“技术人员必须要有一个个人博客”这种夸张的论调，便萌生了写博客的想法。希望为现在已经逐步变成信息孤岛的互联网做出自己的信息输出，同时也方便自己查阅过去的知识。
 
+Blog
+======
+
+{% capture written_year %}'None'{% endcapture %}
+{% for post in site.posts %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% if year != written_year %}
+        {% capture written_year %}{{ year }}{% endcapture %}
+  {% endif %}
+  {% include archive-single.html %}
+{% endfor %}
+
+
+
 关于站主
 ======
 
@@ -18,17 +32,3 @@ redirect_from:
 希望可以将生活中的一切主观和客观事物都通过量化进行分析和处理，以尽量客观且科学的方式看待这个世界并处理好身边的各种问题。
 
 详细信息可以参考此处：[个人主页](https://senmo996.github.io/cv/)。
-
-
-Blog Archive
-======
-
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
