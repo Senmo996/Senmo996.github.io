@@ -1,7 +1,7 @@
 ---
 title: 'Hugging Face CLI (hf命令) 实用指南'
-date: 2025-12-15
-permalink: /posts/2025/12/huggingface-cli/
+date: 2026-01-17
+permalink: /posts/2026/01/huggingface-cli/
 tags:
   - machine learning
   - huggingface
