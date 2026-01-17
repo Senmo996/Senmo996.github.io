@@ -5,7 +5,7 @@
 $(document).ready(function(){
   // Sticky footer
   var bumpIt = function() {
-      $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
+      $("body").css("margin-bottom", $("#footer").outerHeight(true));
     },
     didResize = false;
 
@@ -30,11 +30,11 @@ $(document).ready(function(){
     const MINIMUM_WIDTH = 1024;
 
     // Adjust if the follow button is shown based upon screen size
-    var width = $(window).width();
-    var show = $(".author__urls-wrapper button").length === 0 ? width > MINIMUM_WIDTH : !$(".author__urls-wrapper button").is(":visible");
+    const width = $(window).width();
+    let show = $(".author__urls-wrapper button").length === 0 ? width > MINIMUM_WIDTH : !$(".author__urls-wrapper button").is(":visible");
 
     // Don't show the follow button if there is no content for it
-    var count = $('.author__urls.social-icons li').length - $('li[class="author__desktop"]').length;
+    const count = $('.author__urls.social-icons li').length - $('.author__urls.social-icons li.author__desktop').length;
     if (width <= MINIMUM_WIDTH && count === 0) {
       $(".author__urls-wrapper button").hide();
       show = false;
@@ -95,5 +95,62 @@ $(document).ready(function(){
     closeOnContentClick: true,
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
+
+  // Add copy buttons to code blocks
+  var addCopyButtons = function() {
+    // Select all pre elements with code inside
+    var codeBlocks = document.querySelectorAll('pre code');
+    
+    codeBlocks.forEach(function(block) {
+      // Create button element
+      var button = document.createElement('button');
+      button.className = 'copy-code-button';
+      button.innerText = 'Copy';
+      
+      // Create a wrapper for the code block and button
+      var wrapper = document.createElement('div');
+      wrapper.className = 'code-block-wrapper';
+      
+      // Get the parent pre element
+      var pre = block.parentNode;
+      
+      // Insert the wrapper before the pre element
+      pre.parentNode.insertBefore(wrapper, pre);
+      
+      // Move the pre element inside the wrapper
+      wrapper.appendChild(pre);
+      
+      // Add the button to the wrapper
+      wrapper.appendChild(button);
+      
+      // Add click event listener to the button
+      button.addEventListener('click', function() {
+        // Get the code text
+        var code = block.innerText;
+        
+        // Copy to clipboard
+        navigator.clipboard.writeText(code).then(function() {
+          // Change button text to indicate success
+          button.innerText = 'Copied!';
+          button.classList.add('copied');
+          
+          // Revert button text after 2 seconds
+          setTimeout(function() {
+            button.innerText = 'Copy';
+            button.classList.remove('copied');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy: ', err);
+          button.innerText = 'Error';
+          setTimeout(function() {
+            button.innerText = 'Copy';
+          }, 2000);
+        });
+      });
+    });
+  };
+  
+  // Initialize copy buttons
+  addCopyButtons();
 
 });
