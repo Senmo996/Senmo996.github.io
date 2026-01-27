@@ -237,7 +237,7 @@ export HF_ENDPOINT=https://hf-mirror.com && export HF_HUB_ENABLE_HF_TRANSFER=1 &
 
 ```bash
 # 使用镜像和 hf-transfer 加速下载 Llama 3 模型
-export HF_ENDPOINT=https://hf-mirror.com && export HF_HUB_ENABLE_HF_TRANSFER=1 && hf download meta-llama/Llama-3-8B --local-dir ./llama3 --resume-download
+export HF_ENDPOINT=https://hf-mirror.com && export HF_HUB_ENABLE_HF_TRANSFER=1 && hf download meta-llama/Llama-3-8B --local-dir ./llama3
 ```
 
 ### 场景 2: 上传本地模型到 Hub
@@ -252,7 +252,7 @@ hf upload my-username/my-model ./local-model
 
 ```bash
 # 使用镜像加速下载 GLUE 数据集
-export HF_ENDPOINT=https://hf-mirror.com && hf download glue --local-dir ./glue-dataset --include "**/train.json"
+export HF_ENDPOINT=https://hf-mirror.com && export HF_HUB_ENABLE_HF_TRANSFER=1 && hf download --repo-type dataset glue --local-dir ./glue-dataset
 ```
 
 ## 高级配置
