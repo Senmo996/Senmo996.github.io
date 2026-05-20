@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "个人简历"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,12 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
-教育经历
+Education
 ======
-* 学士，长安大学, 2020-2024
-* 硕士，中国科学院大学，2024-至今
+* B.Eng., Chang'an University, 2020-2024
+* Ph.D., Institute of Information Engineering, University of Chinese Academy of Sciences, 2024-present
 
-<!-- 工作经历
+<!-- Work Experience
 ======
 * Spring 2024: Academic Pages Collaborator
   * Github University
@@ -30,19 +30,8 @@ redirect_from:
   * Github University
   * Duties included: Tagging issues
   * Supervisor: Professor Git -->
-  
-技能
-======
-* 计算机方面
-  * Git
-  * JavaScript
-  * Docker
-* 人工智能方面
-  * Python
-  * Pytorch
-  * Linux
 
-论文
+Publications
 ======
 <ul>{% for post in site.publications reversed %}
   {% include archive-single-cv.html %}
