@@ -3,9 +3,7 @@ title: 'Git常用命令实用指南'
 date: 2026-01-30
 permalink: /posts/2026/01/git-commands/
 tags:
-  - git
-  - version-control
-  - development
+  - linux-command
 ---
 
 `Git` 是目前世界上最流行的分布式版本控制系统。它不仅能够高效地处理从小型到大型项目的各种版本管理需求，还提供了强大的分支管理、协作开发和历史追溯功能。本文将重点介绍 Git 的常用命令和实用技巧，帮助您在日常开发中更高效地使用 Git。

@@ -3,9 +3,7 @@ title: 'Hugging Face CLI (hf命令) 实用指南'
 date: 2026-01-17
 permalink: /posts/2026/01/huggingface-cli/
 tags:
-  - machine learning
-  - huggingface
-  - cli
+  - linux-command
 ---
 
 `huggingface-cli` 是 Hugging Face 官方提供的命令行工具，用于与 Hugging Face Hub 进行交互。随着其功能的不断增强，现在已更名为 `hf` 命令，提供了更简洁、强大的接口。本文将重点介绍 `hf` 命令的具体用法，包括如何使用 hf-mirror 镜像加速下载，以及其他实用的加速措施。
