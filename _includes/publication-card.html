@@ -1,0 +1,28 @@
+{% assign first_author = post.authors | first %}
+{% assign publication_id = post.title | slugify %}
+<article class="publication-card" data-publication-status="{% if post.status == 'preprint' %}preprint{% else %}published{% endif %}" data-first-author="{% if first_author == 'Hengjie Zhu' or first_author == 'H. Zhu' %}true{% else %}false{% endif %}" aria-labelledby="publication-{{ publication_id }}">
+  <a class="publication-card__visual" href="{{ post.url | relative_url }}" aria-label="Read more about {{ post.title | escape }}">
+    <span class="publication-card__badge{% if post.status == 'preprint' %} publication-card__badge--preprint{% endif %}">{% if post.status == 'preprint' %}arXiv {{ post.date | date: '%Y' }}{% else %}{{ post.venue }}{% endif %}</span>
+    {% if post.thumbnail %}
+      <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.thumbnail_alt | escape }}" loading="lazy" decoding="async" width="800" height="480">
+    {% else %}
+      <span class="publication-card__cover" aria-hidden="true"><span>{{ post.short_title }}</span><small>{{ post.research_area }}</small></span>
+    {% endif %}
+  </a>
+  <div class="publication-card__body">
+    <h3 class="publication-card__title" id="publication-{{ publication_id }}"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    <p class="publication-card__venue">{% if post.status == 'preprint' %}arXiv preprint · {{ post.date | date: '%Y' }}{% else %}{{ post.venue_full | default: post.venue }}{% endif %}</p>
+    <p class="publication-card__authors">{% for author in post.authors %}{% if author == 'Hengjie Zhu' or author == 'H. Zhu' %}<strong class="publication-card__author-self">{{ author }}</strong>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <div class="publication-card__tags" aria-label="Publication information">
+      <span>{% if post.status == 'preprint' %}Preprint{% else %}{{ post.venue }}{% endif %}</span>
+      {% if first_author == 'Hengjie Zhu' or first_author == 'H. Zhu' %}<span>First Author</span>{% endif %}
+      <span>{{ post.research_area }}</span>
+    </div>
+    <div class="publication-card__links" aria-label="Paper resources">
+      <a href="{{ post.paperurl }}">Paper</a>
+      {% if post.arxiv_url %}<a href="{{ post.arxiv_url }}">arXiv</a>{% endif %}
+      {% if post.code_url %}<a href="{{ post.code_url }}">Code</a>{% endif %}
+      <a class="publication-card__details" href="{{ post.url | relative_url }}">Details</a>
+    </div>
+  </div>
+</article>

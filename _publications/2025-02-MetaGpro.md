@@ -1,5 +1,19 @@
 ---
 title: "Prompt as a Double-Edged Sword: A Dynamic Equilibrium Gradient-Assigned Attack against Graph Prompt Learning"
+authors:
+- Ju Jia
+- Jingxuan Yu
+- Di Wu
+- Cong Wu
+- Hengjie Zhu
+- Lina Wang
+short_title: MetaGpro
+thumbnail: /images/publications/metagpro.png
+thumbnail_alt: 'MetaGpro framework: GPL simulation, over-robust contrastive learning, and topology perturbation generation (Figure 2).'
+thumbnail_source: https://doi.org/10.1145/3711896.3737091
+thumbnail_figure: 'Figure 2, page 5 (proceedings page 1053)'
+research_area: Graph Prompt Learning
+venue_full: ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2025)
 collection: publications
 permalink: /publication/2025-02-MetaGpro
 excerpt: 'This paper proposes a dynamic equilibrium gradient-assigned attack against graph prompt learning, which can successfully attack the graph prompt learning model with a small amount of perturbations.'

@@ -1,5 +1,19 @@
 ---
 title: "Discretization Is Not Always Better: Rethinking Deep Quantization for Asymmetric Image Retrieval"
+authors:
+- Xinze Liu
+- Dayan Wu
+- Hengjie Zhu
+- Chenming Wu
+- Pengwen Dai
+short_title: DCAH
+thumbnail: /images/publications/dcah.png
+thumbnail_alt: 'DCAH framework with correlation alignment for similarity preserving and quantization (Figure 2).'
+thumbnail_source: https://doi.org/10.1609/aaai.v40i9.37670
+thumbnail_figure: 'Figure 2, page 2 (proceedings page 7324)'
+research_area: Image Retrieval
+venue_full: AAAI Conference on Artificial Intelligence (AAAI 2026)
+code_url: https://github.com/Xinze919/DCAH
 collection: publications
 permalink: /publication/2026-03-discretization-is-not-always-better
 excerpt: 'This paper rethinks strict discretization for asymmetric image retrieval and proposes Deep Correlation Alignment Hashing (DCAH) with correlation alignment based quantization.'
