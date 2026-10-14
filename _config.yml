@@ -8,12 +8,12 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Henry Zhu / Site Title"
+title                    : "Henry Zhu's Homepage"
 title_separator          : "-"
 name                     : &name "Henry Zhu"
-description              : &description "personal description"
+description              : &description "Ph.D. student researching AI agents, reinforcement learning, and information retrieval."
 url                      : "https://Senmo996.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "https://Senmo996.github.io" # the subpath of your site, e.g. "/blog"
+baseurl                  : "" # This personal GitHub Pages site is hosted at the domain root.
 repository               : "Senmo996/Senmo996.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -107,7 +107,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true
   path                   : # blank (default) uses feed.xml
 
 
@@ -147,6 +147,17 @@ include:
   - _pages
   - files
 exclude:
+  # Retain blog sources in Git, but do not publish the blog or its archives.
+  - _posts
+  - _drafts
+  - _pages/year-archive.html
+  - _pages/tag-archive.html
+  - _pages/category-archive.html
+  - _pages/page-archive.html
+  - _pages/collection-archive.html
+  - _pages/sitemap.md
+  - _pages/about_1.md
+  - local
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -247,7 +258,8 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: section-redirect
+      sitemap: false
       author_profile: true
       share: true
       comments: true
@@ -288,14 +300,12 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
   - jemoji
 
 

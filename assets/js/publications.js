@@ -6,7 +6,6 @@
   var buttons = Array.from(root.querySelectorAll('[data-publication-filter]'));
   var cards = Array.from(root.querySelectorAll('.publication-card'));
   var sections = Array.from(root.querySelectorAll('.publications__section'));
-  var result = root.querySelector('.publications__result');
   function matches(card, filter) {
     return filter === 'all' || (filter === 'first' ? card.dataset.firstAuthor === 'true' : card.dataset.publicationStatus === filter);
   }
@@ -16,8 +15,6 @@
       section.hidden = !Array.from(section.querySelectorAll('.publication-card')).some(function (card) { return !card.hidden; });
     });
     buttons.forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.publicationFilter === filter)); });
-    var visible = cards.filter(function (card) { return !card.hidden; }).length;
-    result.textContent = 'Showing ' + visible + ' of ' + cards.length + ' publications';
   }
   buttons.forEach(function (button) {
     var filter = button.dataset.publicationFilter;

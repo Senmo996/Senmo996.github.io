@@ -31,6 +31,10 @@
 
 <!-- end custom head snippets -->
 {% if page.publication_cards %}
-<link rel="stylesheet" href="{{ '/assets/css/publications.css' | relative_url }}">
-<script src="{{ '/assets/js/publications.js' | relative_url }}" defer></script>
+<link rel="stylesheet" href="{{ '/assets/css/publications.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+<script src="{{ '/assets/js/publications.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}" defer></script>
+{% endif %}
+{% if page.single_page %}
+<link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+<script src="{{ '/assets/js/homepage.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}" defer></script>
 {% endif %}

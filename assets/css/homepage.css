@@ -1,0 +1,33 @@
+/* A continuous academic homepage with the site's existing profile sidebar. */
+.homepage { color: #173e59; }
+.homepage [hidden] { display: none !important; }
+.homepage-section, .homepage .publication-card { scroll-margin-top: 90px; }
+.homepage-section { margin-bottom: 48px; }
+.homepage h1 { margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid #e9edf2; font-size: 27px; line-height: 1.4; }
+.homepage .homepage-section__title { margin: 0 0 22px; padding-bottom: 12px; border-bottom: 1px solid #e9edf2; color: #173e59; font-size: 24px; line-height: 1.4; }
+.homepage-bio { color: #384b58; font-size: 16px; line-height: 1.95; }
+.homepage-bio p { margin: 0; }
+.homepage-bio a, .homepage-bio strong { color: #173e59; }
+.homepage a:hover img { box-shadow: none; }
+.homepage .publications__heading { margin-top: 26px; font-size: 19px; }
+.publication-card__abstract { margin-top: 13px; color: #536575; font-size: 12px; line-height: 1.8; }
+.publication-card__abstract summary { width: fit-content; color: #385a73; cursor: pointer; }
+.publication-card__abstract p { margin: 12px 0 0; }
+.publication-card__citation { overflow-wrap: anywhere; }
+.homepage-education { list-style: none; margin: 0; padding: 0; }
+.homepage-education li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; margin: 0; padding: 22px 0; border-bottom: 1px solid #edf0f4; }
+.homepage-education li:last-child { border: 0; }
+.homepage-education__date { padding-top: 2px; color: #647582; font-size: 14px; }
+.homepage-education h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.6; }
+.homepage-education p { margin: 0; color: #536575; font-size: 14px; line-height: 1.8; }
+.homepage-awards { list-style: none; margin: 0; padding: 0; }
+.homepage-awards li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; padding: 18px 0; font-size: 16px; line-height: 1.8; }
+.homepage-awards__year { color: #647582; font-size: 14px; }
+.homepage :is(button, a, summary):focus-visible { outline: 3px solid #417db4; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .homepage h1 { font-size: 24px; }
+  .homepage-bio { font-size: 15px; }
+  .homepage-section { margin-bottom: 36px; }
+  .homepage-education li { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+  .homepage-awards li { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+}
