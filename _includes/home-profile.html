@@ -1,0 +1,40 @@
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}
+{% else %}
+  {% assign author = site.author %}
+{% endif %}
+<div class="profile-card" itemscope itemtype="https://schema.org/Person">
+  <div class="profile-card__identity">
+    <div class="profile-card__portrait">
+      {% if author.avatar contains '://' %}
+        <img src="{{ author.avatar }}" alt="{{ author.name | escape }}" width="132" height="132" itemprop="image">
+      {% else %}
+        {% assign avatar_path = '/images/' | append: author.avatar %}
+        <img src="{{ avatar_path | relative_url }}" alt="{{ author.name | escape }}" width="132" height="132" itemprop="image">
+      {% endif %}
+    </div>
+    <div class="profile-card__heading">
+      <h2 class="profile-card__name" itemprop="name">{{ author.name }}</h2>
+      {% if author.role %}<p class="profile-card__role">{{ author.role }}</p>{% endif %}
+      {% if author.bio %}<p class="profile-card__motto">{{ author.bio }}</p>{% endif %}
+    </div>
+  </div>
+  <ul class="profile-card__facts" aria-label="Location and affiliation">
+    {% if author.location %}<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ author.location }}</span></li>{% endif %}
+    {% if author.employer %}<li><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span>{{ author.employer }}</span></li>{% endif %}
+  </ul>
+  <nav class="profile-card__links" aria-label="Profile links">
+    {% if author.email %}
+      <a class="profile-card__link profile-card__link--email" href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span><span class="profile-card__arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% if author.googlescholar %}
+      <a class="profile-card__link" href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span><span class="profile-card__arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% if author.github %}
+      <a class="profile-card__link" href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span><span class="profile-card__arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+    {% if author.bluesky %}
+      <a class="profile-card__link" href="https://bsky.app/profile/{{ author.bluesky }}"><i class="fab fa-bluesky" aria-hidden="true"></i><span>Bluesky</span><span class="profile-card__arrow" aria-hidden="true">↗</span></a>
+    {% endif %}
+  </nav>
+</div>
