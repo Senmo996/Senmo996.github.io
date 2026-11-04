@@ -1,5 +1,11 @@
 (function () {
   'use strict';
+  // Recalculate the responsive navigation after the local webfont is ready.
+  window.addEventListener('load', function () {
+    if (document.fonts) {
+      document.fonts.ready.then(function () { window.dispatchEvent(new Event('resize')); });
+    }
+  }, { once: true });
   // Handle same-page links before the theme's generic smooth-scroll plugin.
   document.addEventListener('click', function (event) {
     var link = event.target.closest('a[href]');

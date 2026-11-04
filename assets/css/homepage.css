@@ -1,4 +1,16 @@
 /* A continuous academic homepage with the site's existing profile sidebar. */
+@font-face {
+  font-family: 'Inter Navigation';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('../fonts/inter/inter-latin.woff2') format('woff2');
+}
+#site-nav { font-family: 'Inter Navigation', 'Segoe UI', Arial, sans-serif; }
+#site-nav .masthead__menu-item > a { font-size: 15px; font-weight: 600; line-height: 1.5; letter-spacing: -.015em; color: #36516a; }
+#site-nav .masthead__menu-item--lg > a { font-size: 17px; font-weight: 700; letter-spacing: -.025em; color: #173e59; }
+#site-nav .masthead__menu-item > a:hover { color: #b23870; }
+#site-nav .visible-links a::before { height: 2px; border-radius: 2px; background: #c85a8c; }
 .homepage-shell .profile-card {
   padding: 24px 16px 18px;
   border: 1px solid #e5eaf2;
