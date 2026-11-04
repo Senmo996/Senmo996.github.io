@@ -15,6 +15,7 @@ redirect_from:
   <h1 id="intro-title">Hi, I am Henry Zhu.</h1>
   <div class="homepage-bio" id="bio-en" lang="en">
     <p>Welcome to my homepage! I am currently a Ph.D. student in Computer Application Technology at the Institute of Information Engineering, University of Chinese Academy of Sciences, advised by <a href="https://people.ucas.ac.cn/~dayan">Dayan Wu</a> and <a href="https://people.ucas.ac.cn/~wwp">Weiping Wang</a>. Previously, I received my bachelor's degree in Automation from Chang'an University in 2024. My research interests primarily focus on <strong>AI agents, reinforcement learning, and information retrieval</strong>.</p>
+    <p class="homepage-affiliation">I am also part of <a href="{{ site.author.organization.url }}"><strong>{{ site.author.organization.name }}</strong></a>, where we develop benchmarks, data, and models for AI agents, with a focus on traceable evaluation. Explore our work on <a href="{{ site.author.organization.url }}">GitHub ↗</a>.</p>
   </div>
 </section>
 

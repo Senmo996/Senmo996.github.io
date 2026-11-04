@@ -21,13 +21,16 @@ repository               : "Senmo996/Senmo996.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "pikaqu.jpg"
+  avatar           : "pikachu-avatar.jpg"
   name             : "Henry Zhu"
   role             : "Ph.D. Student"
   pronouns         : # example: "she/her"  
   bio              : "Quantify everything"
   location         : "ZheJiang China"
   employer         : "UCAS-IIE"
+  organization:
+    name: "TraceLite AI"
+    url: "https://github.com/TraceLite-AI"
   uri              : # URL
   email            : "z1113609151@gmail.com" 
 

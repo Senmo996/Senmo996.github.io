@@ -22,6 +22,7 @@
   <ul class="profile-card__facts" aria-label="Location and affiliation">
     {% if author.location %}<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ author.location }}</span></li>{% endif %}
     {% if author.employer %}<li><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span>{{ author.employer }}</span></li>{% endif %}
+    {% if author.organization.name and author.organization.url %}<li><i class="fa-solid fa-users" aria-hidden="true"></i><a class="profile-card__organization" href="{{ author.organization.url }}" aria-label="{{ author.organization.name | escape }} organization on GitHub">{{ author.organization.name }} <span aria-hidden="true">↗</span></a></li>{% endif %}
   </ul>
   <nav class="profile-card__links" aria-label="Profile links">
     {% if author.email %}
